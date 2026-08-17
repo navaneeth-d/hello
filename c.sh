@@ -1,24 +1,23 @@
-# !/bin/zsh
+#!/bin/sh
+
 # A simple calculator shell program
-a = $1
-b = $2
+a=$1
+b=$2
 
 echo "Enter Choice:"
 echo "1. Addition"
 echo "2. Subtraction"
-echo "3. Muliply"
+echo "3. Multiply"
 echo "4. Division"
 
-ch = $3
+ch=$3
 
-case $ch in 
-    1) res = `expr $a + $b`
-    ;;
-    2) res = `expr $a - $b`
-    ;;
-    3) res = `expr $a * $b`
-    ;;
-    4) res = `expr $a / $b`
-    ;;
+case $ch in
+    1) res=$(expr "$a" + "$b") ;;
+    2) res=$(expr "$a" - "$b") ;;
+    3) res=$(expr "$a" \* "$b") ;;
+    4) res=$(expr "$a" / "$b") ;;
+    *) echo "Invalid choice"; exit 1 ;;
 esac
+
 echo "Result: $res"
