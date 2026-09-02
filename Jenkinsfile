@@ -3,7 +3,7 @@ agent any
     stages {
         stage('Clone Git') {
             steps {
-                git clone 'https://github.com/navaneeth-d/hello.git'
+                git 'https://github.com/navaneeth-d/hello.git'
             }
         }
         stage('Build Code') {
